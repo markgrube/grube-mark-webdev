@@ -1,3 +1,28 @@
+module.exports = function(app)
+{
+    app.get("/api/test", findAllMessages);
+    app.post("/api/test", createMessage);
+    app.delete("/api/test/:id", deleteMessage);
+
+    // var connectionString = 'mongodb://localhost:27017/test';
+    // if(process.env.MLAB_DB_USERNAME) {
+    //     connectionString = process.env.MLAB_DB_URL_INIT +
+    //         process.env.MLAB_DB_USERNAME + ":" +
+    //         process.env.MLAB_DB_PASSWORD +
+    //         process.env.MLAB_DB_URL_END + '/' +
+    //         process.env.MLAB_DB_NAME;
+    // }
+    var connectionString = 'mongodb://heroku_4gqgl0ms:565k7fbhk8lcs4i08a9brk0i3e@ds033096.mlab.com:33096/heroku_4gqgl0ms'
+    var mongoose = require("mongoose");
+    mongoose.connect(connectionString);
+
+    var TestSchema = mongoose.Schema({
+        message: String
+    })
+
+    var TestModel = mongoose.model("TestModel", TestSchema);
+}
+
 (function() {
     angular
         .module("TestApp", [])
