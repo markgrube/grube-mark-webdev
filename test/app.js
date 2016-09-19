@@ -6,7 +6,7 @@ module.exports = function(app)
 
     var connectionString = 'mongodb://127.0.0.1:27017/test';
 
-    if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
+    if(process.env.MLAB_DB_USERNAME) {
         connectionString = process.env.MLAB_DB_URL_INIT +
             process.env.MLAB_DB_USERNAME + ":" +
             process.env.MLAB_DB_PASSWORD +
