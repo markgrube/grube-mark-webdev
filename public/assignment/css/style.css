@@ -1,7 +1,36 @@
+.navbar-default {
+    background-color: #337ab7;
+}
+
+.navbar-default .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-link {
+    color: #ffffff;
+}
+
+.headerPadding {
+    padding-top: 30px;
+}
+
+body {
+    padding-top: 30px;
+}
+
 input.form-control {
     margin-bottom: 5px;
 }
 
-body {
-    padding-top: 36px;
+.list-group-item {
+    border: 0px;
+}
+
+.vertical-divider {
+    left:33%;
+    width:1px;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: slategray;
 }
