@@ -34,3 +34,11 @@ input.form-control {
     position: fixed;
     background-color: slategray;
 }
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
