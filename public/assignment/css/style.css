@@ -14,6 +14,10 @@
     padding-top: 30px;
 }
 
+.footerPadding {
+    padding-bottom: 50px;
+}
+
 body {
     padding-top: 30px;
 }
@@ -39,6 +43,21 @@ a:link {
     text-decoration: none;
 }
 
-a:hover {
-    color: red;
+.widget-spacing {
+    padding-top: 15px;
+}
+
+.relative-position {
+    position: relative;
+}
+
+.absolute-position {
+    position: absolute;
+}
+
+.widget-overlay {
+    top: 0px;
+    right: 0px;
+    z-index: 100;
+    background-color: white;
 }

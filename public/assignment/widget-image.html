@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Widget Image</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css"/>
@@ -27,8 +27,31 @@
     </div>
 </nav>
 
-<div class="container-fluid headerPadding">
-
+<div class="container-fluid headerPadding footerPadding">
+    <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+            <label for="text">Text</label>
+            <input type="text" class="form-control" id="text">
+        </div>
+        <div class="form-group">
+            <label for="url">URL</label>
+            <input type="url" class="form-control" id="url" value="hhttps://cdn.passporthealthusa.com/wp-content/uploads/2014/10/mosquito-on-skin.jpg?127b2a">
+        </div>
+        <div class="form-group">
+            <label for="width">Width</label>
+            <input type="number" class="form-control" id="width" value="100%">
+        </div>
+        <div class="form-group">
+            <label for="file">Upload</label>
+            <input type="file" class="form-control" id="file">
+        </div>
+        <a class="btn btn-primary btn-block" href="widget-list.html">Upload Image</a>
+        <a class="btn btn-danger btn-block" href="widget-list.html">Delete</a>
+    </form>
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
