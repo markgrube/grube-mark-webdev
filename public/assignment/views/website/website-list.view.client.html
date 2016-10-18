@@ -1,12 +1,12 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <p class="navbar-text pull-right">
-            <a class="navbar-link" href="#/website-new.view.client.html">
+            <a class="navbar-link" href="#/user/:uid/website/new">
                 <span class="glyphicon glyphicon-plus"></span>
             </a>
         </p>
         <p class="navbar-text pull-left">
-            <a href="#/user/profile.view.client.html" class="navbar-link">
+            <a href="#/profile" class="navbar-link">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
         </p>
@@ -19,34 +19,10 @@
 
 <div class="container-fluid headerPadding footerPadding">
     <ul class="list-group">
-        <li class="list-group-item">
-            <a href="#/page/page-list.view.client.html">Address Book App</a>
+        <li ng-repeat="website in websites" class="list-group-item">
+            <a href="#/user/:uid/website/{{website._id}}/page">{{website.name}}</a>
             <div class="listConf pull-right">
-                <a href="#/website-edit.view.client.html">
-                    <span class="glyphicon glyphicon-cog"></span>
-                </a>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <a href="#/page/page-list.view.client.html">Blogger</a>
-            <div class="listConf pull-right">
-                <a href="#/website-edit.view.client.html">
-                    <span class="glyphicon glyphicon-cog"></span>
-                </a>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <a href="#/page/page-list.view.client.html">Blogging App</a>
-            <div class="listConf pull-right">
-                <a href="#/website-edit.view.client.html">
-                    <span class="glyphicon glyphicon-cog"></span>
-                </a>
-            </div>
-        </li>
-        <li class="list-group-item">
-            <a href="#/page/page-list.view.client.html">Script Testing App</a>
-            <div class="listConf pull-right">
-                <a href="#/website-edit.view.client.html">
+                <a href="#/user/:uid/website/{{website._id}}">
                     <span class="glyphicon glyphicon-cog"></span>
                 </a>
             </div>
@@ -57,7 +33,7 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="navbar-text pull-right">
-            <a class="navbar-link" href="#/user/profile.view.client.html">
+            <a class="navbar-link" href="#/user/:uid">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
         </div>
