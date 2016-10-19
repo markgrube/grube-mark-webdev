@@ -1,12 +1,12 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <p class="navbar-text pull-right">
-            <a class="navbar-link" href="#/user/:uid/website/:wid/page/new">
+            <a class="navbar-link" href="#/user/{{model.userId}}/website/{{model.webId}}/page/new">
                 <span class="glyphicon glyphicon-plus"></span>
             </a>
         </p>
         <p class="navbar-text pull-left">
-            <a class="navbar-link" href="#/user/:uid/website">
+            <a class="navbar-link" href="#/user/{{model.userId}}/website">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
         </p>
@@ -18,10 +18,10 @@
 
 <div class="container-fluid headerPadding footerPadding">
     <ul class="list-group">
-        <li ng-repeat="page in pages" class="list-group-item">
-            <a href="#/user/:uid/website/:wid/page/{{page._id}}/widget">{{page.name}}</a>
+        <li ng-repeat="page in model.pages" class="list-group-item">
+            <a href="#/user/{{model.userId}}/website/{{model.webId}}/page/{{page._id}}/widget">{{page.name}}</a>
             <div class="listConf pull-right">
-                <a href="#/user/:uid/website/:wid/page/{{page._id}}">
+                <a href="#/user/{{model.userId}}/website/{{model.webId}}/page/{{page._id}}">
                     <span class="glyphicon glyphicon-cog"></span>
                 </a>
             </div>
@@ -32,7 +32,7 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="navbar-text pull-right">
-            <a class="navbar-link" href="#/user/:uid">
+            <a class="navbar-link" href="#/user/{{model.userId}}">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
         </div>
