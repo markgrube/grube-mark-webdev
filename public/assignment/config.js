@@ -7,7 +7,8 @@
         $routeProvider
             .when("/login", {
                 templateUrl: "views/user/login.view.client.html",
-                controller: "LoginController"
+                controller: "LoginController",
+                controllerAs: "model"
             })
             .when("/register", {
                 templateUrl: "views/user/register.view.client.html"
@@ -20,13 +21,16 @@
                 controller: "WebsiteListController"
             })
             .when("/user/:uid/website/new", {
-                templateUrl: "views/website/website-new.view.client.html"
+                templateUrl: "views/website/website-new.view.client.html",
+                controller: "WebsiteListController"
             })
             .when("/user/:uid/website/:wid", {
-                templateUrl: "views/website/website-edit.view.client.html"
+                templateUrl: "views/website/website-edit.view.client.html",
+                controller: "WebsiteListController"
             })
             .when("/user/:uid/website/:wid/page", {
-                templateUrl: "views/page/page-list.view.client.html"
+                templateUrl: "views/page/page-list.view.client.html",
+                controller: "PageListController"
             })
             .when("/user/:uid/website/:wid/page/new", {
                 templateUrl: "views/page/page-new.view.client.html"
@@ -39,12 +43,6 @@
             })
             .when("/user/:uid/website/:wid/page/:pid/widget/new", {
                 templateUrl: "views/widget/widget-chooser.view.client.html"
-            })
-            .when("/user/:uid/website/:wid/page/:pid/widget/:wid", {
-                templateUrl: "views/widget/widget-edit.view.client.html"
-            })
-            .when("/user/:uid/website/:wid/page/:pid/widget/:wid", {
-                templateUrl: "views/widget/widget-edit.view.client.html"
             })
             .when("/user/:uid/website/:wid/page/:pid/widget/:wid", {
                 templateUrl: "views/widget/widget-edit.view.client.html"
