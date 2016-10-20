@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <p class="navbar-text">
-            <a class="navbar-link" href="#/user/:uid/website/:wid/page/:pid/widget">
+            <a class="navbar-link" href="#/user/{{model.userId}}/website/:wid/page/{{model.pageId}}/widget">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
         </p>
@@ -13,8 +13,12 @@
 
 <div class="container-fluid headerPadding footerPadding">
     <ul class="list-group">
+        <li ng-repeat="widget in model.widgets" class="list-group-item">
+            <a href="#/user/{{model.userId}}/website/{{model.webId}}/page/{{model.pageId}}/widget/{{widget._id}}">{{widget.widgetType}}</a>
+        </li>
+
         <li class="list-group-item">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/:wgid">Header</a>
+            <a href="#/user/:uid/website/{{model.webId}}/page/{{model.pageId}}/widget/:wgid">Header</a>
         </li>
         <li class="list-group-item">
             <a href="#">Label</a>
@@ -32,10 +36,10 @@
             <a href="#">Button</a>
         </li>
         <li class="list-group-item">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/:wgid">Image</a>
+            <a href="#/user/{{model.userId}}/website/{{model.webId}}/page/{{model.pageId}}/widget/:wgid">Image</a>
         </li>
         <li class="list-group-item">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget/:wgid">YouTube</a>
+            <a href="#/user/{{model.userId}}/website/{{model.webId}}/page/:{{model.pageId}}/widget/:wgid">YouTube</a>
         </li>
         <li class="list-group-item">
             <a href="#">Data Table</a>
@@ -49,7 +53,7 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="navbar-text pull-right">
-            <a class="navbar-link" href="#/user/:uid">
+            <a class="navbar-link" href="#/user/{{model.userId}}">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
         </div>

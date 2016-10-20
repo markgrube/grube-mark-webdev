@@ -35,10 +35,18 @@
             var userId = parseInt($routeParams.uid);
             vm.userId = userId;
 
+            var webId = parseInt($routeParams.wid);
+            vm.webId = webId;
+
             function generateWebsites(){
                 vm.websites = WebsiteService.findWebsitesByUser(userId)
             }
             generateWebsites();
+
+            function generateWebsite(){
+                vm.website = WebsiteService.findWebsiteById(webId)
+            }
+            generateWebsite();
         }
     }
 )();

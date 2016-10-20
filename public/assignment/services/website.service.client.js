@@ -5,18 +5,18 @@
 
     function WebsiteService() {
         var websites = [
-            {"_id": 001, "name": "Bjerg's Address Book", uid: 123, "description": ""},
-            {"_id": 002, "name": "Blogger", uid: 123, "description": ""},
-            {"_id": 003, "name": "Blogging App", uid: 123, "description": ""},
-            {"_id": 004, "name": "Script Testing App", uid: 123, "description": ""},
-            {"_id": 005, "name": "Doublelift's Address Book", uid: 234, "description": ""},
-            {"_id": 006, "name": "Blogger", uid: 234, "description": ""},
-            {"_id": 007, "name": "Blogging App", uid: 234, "description": ""},
-            {"_id": 008, "name": "Script Testing App", uid: 234, "description": ""},
-            {"_id": 009, "name": "Dyrus' Address Book", uid: 345, "description": ""},
-            {"_id": 010, "name": "Blogger", uid: 345, "description": ""},
-            {"_id": 011, "name": "Blogging App", uid: 345, "description": ""},
-            {"_id": 012, "name": "Script Testing App", uid: 345, "description": ""}
+            {"_id": 001, "name": "Bjerg's Address Book", uid: 001, "description": "addresses"},
+            {"_id": 002, "name": "Blogger", uid: 001, "description": "some blog"},
+            {"_id": 003, "name": "Blogging App", uid: 001, "description": "blogging app?"},
+            {"_id": 004, "name": "Script Testing App", uid: 001, "description": "TDD"},
+            {"_id": 005, "name": "Doublelift's Address Book", uid: 002, "description": ""},
+            {"_id": 006, "name": "Blogger", uid: 002, "description": ""},
+            {"_id": 007, "name": "Blogging App", uid: 002, "description": ""},
+            {"_id": 008, "name": "Script Testing App", uid: 002, "description": ""},
+            {"_id": 009, "name": "Dyrus' Address Book", uid: 003, "description": ""},
+            {"_id": 010, "name": "Blogger", uid: 003, "description": ""},
+            {"_id": 011, "name": "Blogging App", uid: 003, "description": ""},
+            {"_id": 012, "name": "Script Testing App", uid: 003, "description": ""}
         ];
 
         var api = {

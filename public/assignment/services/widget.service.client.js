@@ -5,13 +5,13 @@
 
     function WidgetService() {
         var widgets = [
-            { "_id": 001, "widgetType": "HEADER", "pageId": "321", "size": 2, "text": "GIZMODO"},
-            { "_id": 002, "widgetType": "HEADER", "pageId": "321", "size": 4, "text": "Lorem ipsum"},
-            { "_id": 003, "widgetType": "IMAGE", "pageId": "321", "width": "100%", "url": "http://lorempixel.com/400/200/"},
-            { "_id": 004, "widgetType": "HTML", "pageId": "321", "text": "<p>Lorem ipsum</p>"},
-            { "_id": 005, "widgetType": "HEADER", "pageId": "321", "size": 4, "text": "Lorem ipsum"},
-            { "_id": 006, "widgetType": "YOUTUBE", "pageId": "321", "width": "100%", "url": "https://youtu.be/AM2Ivdi9c4E" },
-            { "_id": 007, "widgetType": "HTML", "pageId": "321", "text": "<p>Lorem ipsum</p>"}
+            { "_id": 001, "widgetType": "HEADER", pid: "001", "size": 2, "text": "GIZMODO"},
+            { "_id": 002, "widgetType": "HEADER", pid: "001", "size": 4, "text": "Lorem ipsum"},
+            { "_id": 003, "widgetType": "IMAGE", pid: "001", "width": "100%", "url": "http://lorempixel.com/400/200/"},
+            { "_id": 004, "widgetType": "HTML", pid: "001", "text": "<p>Lorem ipsum</p>"},
+            { "_id": 005, "widgetType": "HEADER", pid: "001", "size": 4, "text": "Lorem ipsum"},
+            { "_id": 006, "widgetType": "YOUTUBE", pid: "001", "width": "100%", "url": "https://youtu.be/AM2Ivdi9c4E" },
+            { "_id": 007, "widgetType": "HTML", pid: "001", "text": "<p>Lorem ipsum</p>"}
         ];
 
         var api = {

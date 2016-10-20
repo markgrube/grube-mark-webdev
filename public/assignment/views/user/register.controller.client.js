@@ -5,15 +5,15 @@
 
     function RegisterController($location, UserService) {
         var vm = this;
-        vm.login = login;
+        vm.register = register;
 
-        function login(username, password){
-            var user = UserService.findUserByCredentials(username, password);
-            if (user === null) {
-                vm.error = "User not found";
+        function register(user){
+            if(vm.password === vm.verifyPassword){
+                var registeredUser = UserService.createUser(user);
+                $location.url("/user/" + registeredUser._id);
             }
             else {
-                $location.url("/user/" + user._id);
+                vm.error = "Passwords do not match";
             }
         }
     }

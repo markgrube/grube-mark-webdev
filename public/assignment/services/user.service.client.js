@@ -50,7 +50,11 @@
 
         function createUser(user) {
             user._id = users.length+1;
+            user.first = "";
+            user.last = "";
+            user.email = "";
             users.push(user);
+            return user;
         }
 
         function findUserByUsername(username) {
