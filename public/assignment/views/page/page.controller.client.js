@@ -15,7 +15,7 @@
             vm.webId = webId;
 
             function generatePages(){
-                vm.pages = PageService.findPagesForWebsite(webId)
+                vm.pages = PageService.findPageByWebsiteId(webId)
             }
             generatePages();
         }

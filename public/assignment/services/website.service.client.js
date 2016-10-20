@@ -29,8 +29,8 @@
         return api;
 
         function createWebsite(userId, website) {
-            const lastIndex = websites.length;
-            website._id = lastIndex;
+            website._id = websites.length+1;
+            website.uid = userId;
             websites.push(website);
         }
 

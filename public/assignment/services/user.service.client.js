@@ -5,16 +5,16 @@
 
     function UserService() {
         var users = [
-            {username: 'bjergsen', password: 'ewq', _id: 123, first: 'Soren', last: 'Bjerg', email: 'bjergsen@tsm.gg'},
+            {username: 'bjergsen', password: 'ewq', _id: 001, first: 'Soren', last: 'Bjerg', email: 'bjergsen@tsm.gg'},
             {
                 username: 'doublelift',
                 password: 'ewq',
-                _id: 234,
+                _id: 002,
                 first: 'Yilian',
                 last: 'Peng',
                 email: 'doublelift@tsm.gg'
             },
-            {username: 'dyrus', password: 'ewq', _id: 345, first: 'Marcus', last: 'Hill', email: 'dyrus@tsm.gg'}
+            {username: 'dyrus', password: 'ewq', _id: 003, first: 'Marcus', last: 'Hill', email: 'dyrus@tsm.gg'}
         ];
 
         var api = {
@@ -49,12 +49,8 @@
         }
 
         function createUser(user) {
-            const lastIndex = users[users.length - 1]._id;
-
-            user._id = lastIndex + 1;
+            user._id = users.length+1;
             users.push(user);
-
-            return user
         }
 
         function findUserByUsername(username) {
