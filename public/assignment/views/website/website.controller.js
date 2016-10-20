@@ -12,7 +12,7 @@
             vm.userId = userId;
 
             function generateWebsites(){
-                vm.websites = WebsiteService.findWebsitesForUser(userId)
+                vm.websites = WebsiteService.findWebsitesByUser(userId)
             }
             generateWebsites();
         }
@@ -24,7 +24,7 @@
             vm.userId = userId;
 
             function generateWebsites(){
-                vm.websites = WebsiteService.findWebsitesForUser(userId)
+                vm.websites = WebsiteService.findWebsitesByUser(userId)
             }
             generateWebsites();
         }
@@ -36,7 +36,7 @@
             vm.userId = userId;
 
             function generateWebsites(){
-                vm.websites = WebsiteService.findWebsitesForUser(userId)
+                vm.websites = WebsiteService.findWebsitesByUser(userId)
             }
             generateWebsites();
         }

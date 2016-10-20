@@ -34,7 +34,7 @@
                     return user;
                 }
             }
-            return null;
+            return null
         }
 
         function findUserByCredentials(username, password) {
@@ -42,19 +42,19 @@
                 user = users[u];
                 if (user.username === username
                     && user.password === password) {
-                    return user;
+                    return user
                 }
             }
-            return null;
+            return null
         }
 
         function createUser(user) {
-            const lastIndex = users[users.length - 1]._id
+            const lastIndex = users[users.length - 1]._id;
 
-            user._id = lastIndex + 1
-            users.push(user)
+            user._id = lastIndex + 1;
+            users.push(user);
 
-            return user;
+            return user
         }
 
         function findUserByUsername(username) {
@@ -68,20 +68,21 @@
         }
 
         function updateUser(userId, user) {
-            user._id = userId
+            user._id = userId;
 
             for (var u in users) {
                 if (users[u]._id === userId) {
                     users[u] = user;
+                    return 0;
                 }
             }
-            return null;
+            return 1;
         }
 
         function deleteUser(userId) {
             for (var u in users) {
                 if (users[u]._id === userId) {
-                    users.splice(u, 1)
+                    users.splice(u, 1);
                     return 0;
                 }
             }
