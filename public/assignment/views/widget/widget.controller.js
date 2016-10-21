@@ -17,7 +17,7 @@
             vm.pageId = pageId;
 
             function generateWidgets(){
-                vm.websites = WidgetService.findWidgetsByPageId(pageId)
+                vm.widgets = WidgetService.findWidgetsByPageId(pageId)
             }
             generateWidgets();
         }
@@ -35,7 +35,7 @@
             vm.pageId = pageId;
 
             function generateWidgets(){
-                vm.websites = WidgetService.findWidgetsByPageId(pageId)
+                vm.widgets = WidgetService.findWidgetsByPageId(pageId)
             }
             generateWidgets();
         }

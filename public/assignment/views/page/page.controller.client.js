@@ -3,7 +3,7 @@
             .module("WebAppMaker")
             .controller("PageListController", PageListController)
             .controller("NewPageController", NewPageController)
-            .controller("EditPageController", EditPageController)
+            .controller("EditPageController", EditPageController);
 
         function PageListController($routeParams, PageService) {
             var vm = this;
@@ -15,12 +15,12 @@
             vm.webId = webId;
 
             function generatePages(){
-                vm.pages = PageService.findPageByWebsiteId(webId)
+                vm.pages = PageService.findPageByWebsiteId(webId);
             }
             generatePages();
         }
 
-        function NewPageController($routeParams, PageService) {
+        function EditPageController($routeParams, PageService) {
             var vm = this;
 
             var userId = parseInt($routeParams.uid);
@@ -28,9 +28,17 @@
 
             var webId = parseInt($routeParams.wid);
             vm.webId = webId;
+
+            var pageId = parseInt($routeParams.pid);
+            vm.pageId = pageId;
+
+            function generatePage(){
+                vm.page = PageService.findPageById(pageId);
+            }
+            generatePage();
         }
 
-        function EditPageController($routeParams, PageService) {
+        function NewPageController($routeParams, PageService) {
             var vm = this;
 
             var userId = parseInt($routeParams.uid);

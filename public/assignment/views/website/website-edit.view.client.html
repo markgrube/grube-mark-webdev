@@ -59,11 +59,11 @@
             <form>
                 <div class="form-group">
                     <label for="name">Website Name</label>
-                    <input type="text" ng-model="model.website.name" class="form-control" id="name" placeholder="Blogger">
+                    <input ng-model="model.website.name" type="text" class="form-control" id="name" placeholder="Blogger">
                 </div>
                 <div class="form-group">
                     <label for="description">Website Description</label>
-                    <textarea class="form-control" ng-model="model.website.description" id="description" rows="6" placeholder="Description of website"></textarea>
+                    <textarea ng-model="model.website.description" class="form-control" id="description" rows="6" placeholder="Description of website"></textarea>
                 </div>
             </form>
             <a class="btn btn-danger btn-block" href="#/user/{{model.userId}}/website">Delete</a>
