@@ -42,7 +42,7 @@
             }
         }
 
-        function WidgetChooserController($routeParams, WidgetService) {
+        function WidgetChooserController($routeParams, WidgetService, $location) {
             var vm = this;
 
             var userId = parseInt($routeParams.uid);
@@ -54,10 +54,12 @@
             var pageId = parseInt($routeParams.pid);
             vm.pageId = pageId;
 
-            function generateWidgets(){
-                vm.widgets = WidgetService.findWidgetsByPageId(pageId)
+            vm.createWidget = createWidget;
+
+            function createWidget(pid, widget){
+                var newWidget = WidgetService.createWidget(pageId, widget);
+                $location.url("/user/" + userId + "/website/" + webId + "/page/" + pageId + "/widget/" + newWidget._id);
             }
-            generateWidgets();
         }
 
         function WidgetEditController($routeParams, WidgetService) {

@@ -39,7 +39,7 @@ input.form-control {
     background-color: slategray;
 }
 
-a:link {
+a, a:hover {
     text-decoration: none;
 }
 

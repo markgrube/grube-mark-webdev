@@ -40,7 +40,7 @@
             </div>
 
             <div ng-switch-when="IMAGE" class="relative-position">
-                <img src="{{model.checkSafeImageUrl(widget.url)}}" class="img-responsive center-block">
+                <img ng-src="{{model.checkSafeImageUrl(widget.url)}}" class="img-responsive center-block">
             </div>
 
             <div ng-switch-when="HTML" ng-bind-html="model.checkSafeHTML(widget.text)" class="relative-position">
