@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <p class="navbar-text pull-right">
-            <a class="navbar-link" href="#/user/{{model.userId}}/website/{{model.webId}}/page">
+            <a ng-click="model.createPage(model.webId, {name: model.name, description: model.description})" class="navbar-link">
                 <span class="glyphicon glyphicon-ok"></span>
             </a>
         </p>
@@ -20,11 +20,11 @@
     <form>
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Page Name">
+            <input ng-model="model.name" type="text" class="form-control" id="name" placeholder="Page Name">
         </div>
         <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" placeholder="Page Title">
+            <label for="description">Description</label>
+            <input ng-model="model.description" type="text" class="form-control" id="description" placeholder="Page Description">
         </div>
     </form>
 </div>

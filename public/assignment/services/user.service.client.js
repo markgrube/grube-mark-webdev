@@ -49,6 +49,8 @@
         }
 
         function createUser(user) {
+            user.username = user.username;
+            user.password = user.password;
             user._id = users.length+1;
             user.first = "";
             user.last = "";

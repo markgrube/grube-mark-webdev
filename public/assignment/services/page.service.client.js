@@ -60,6 +60,7 @@
             page._id = pages.length+1;
             page.wid = websiteId;
             pages.push(page);
+            return page;
         }
 
         function findPageById(pageId) {

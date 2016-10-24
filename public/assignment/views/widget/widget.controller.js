@@ -62,7 +62,7 @@
             }
         }
 
-        function WidgetEditController($routeParams, WidgetService) {
+        function WidgetEditController($routeParams, WidgetService, $location) {
             var vm = this;
 
             var userId = parseInt($routeParams.uid);
@@ -77,10 +77,17 @@
             var widgetId = parseInt($routeParams.wgid);
             vm.widgetId = widgetId;
 
+            vm.deleteWidget = deleteWidget;
+
             function generateWidget(){
                 vm.widget = WidgetService.findWidgetById(widgetId)
             }
             generateWidget();
+
+            function deleteWidget() {
+                WidgetService.deleteWidget(widgetId);
+                $location.url("/user/" + userId + "/website/" + webId + "/page/" + pageId + "/widget");
+            }
         }
 
     }

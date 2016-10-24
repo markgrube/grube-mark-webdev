@@ -20,7 +20,7 @@
             generatePages();
         }
 
-        function EditPageController($routeParams, PageService) {
+        function EditPageController($routeParams, PageService, $location) {
             var vm = this;
 
             var userId = parseInt($routeParams.uid);
@@ -32,13 +32,26 @@
             var pageId = parseInt($routeParams.pid);
             vm.pageId = pageId;
 
+            vm.updatePage = updatePage;
+            vm.deletePage = deletePage;
+
             function generatePage(){
                 vm.page = PageService.findPageById(pageId);
             }
             generatePage();
+
+            function updatePage(pageId, page) {
+                var newPage = PageService.updatePage(pageId, page);
+                $location.url("/user/" + userId + "/website/" + webId + "/page");
+            }
+
+            function deletePage() {
+                PageService.deletePage(pageId);
+                $location.url("/user/" + userId + "/website/" + webId + "/page");
+            }
         }
 
-        function NewPageController($routeParams, PageService) {
+        function NewPageController($routeParams, PageService, $location) {
             var vm = this;
 
             var userId = parseInt($routeParams.uid);
@@ -46,6 +59,13 @@
 
             var webId = parseInt($routeParams.wid);
             vm.webId = webId;
+
+            vm.createPage = createPage;
+
+            function createPage(webId, page) {
+                var newPage = PageService.createPage(webId, page);
+                $location.url("/user/" + userId + "/website/" + webId + "/page");
+            }
         }
     }
 )();

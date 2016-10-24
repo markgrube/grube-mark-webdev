@@ -21,7 +21,7 @@
 
             <div class="col-sm-8 col-xs-12">
                 <p class="navbar-text pull-right">
-                    <a class="navbar-link" href="#/user/{{model.userId}}/website">
+                    <a ng-click="model.updateWebsite(model.webId, model.website)" class="navbar-link">
                         <span class="glyphicon glyphicon-ok"></span>
                     </a>
                 </p>
@@ -59,18 +59,17 @@
             <form>
                 <div class="form-group">
                     <label for="name">Website Name</label>
-                    <input ng-model="model.website.name" type="text" class="form-control" id="name" placeholder="Blogger">
+                    <input ng-model="model.website.name" type="text" class="form-control" id="name" placeholder="name">
                 </div>
                 <div class="form-group">
                     <label for="description">Website Description</label>
                     <textarea ng-model="model.website.description" class="form-control" id="description" rows="6" placeholder="Description of website"></textarea>
                 </div>
             </form>
-            <a class="btn btn-danger btn-block" href="#/user/{{model.userId}}/website">Delete</a>
+            <a ng-click="model.deleteWebsite(model.websiteId)" class="btn btn-danger btn-block">Delete</a>
         </div>
     </div>
 </div>
-
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">

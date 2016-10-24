@@ -32,6 +32,7 @@
             website._id = websites.length+1;
             website.uid = userId;
             websites.push(website);
+            return website;
         }
 
         function findWebsiteById(wid) {

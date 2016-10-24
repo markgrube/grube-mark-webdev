@@ -20,7 +20,7 @@
 
             <div class="col-sm-8 col-xs-12">
                 <p class="navbar-text pull-right">
-                    <a class="navbar-link" href="#/user/{{model.userId}}/website">
+                    <a ng-click="model.createWebsite(model.userId, {name: model.website.name, developer: model.userId, description: model.website.description})" class="navbar-link">
                         <span class="glyphicon glyphicon-ok"></span>
                     </a>
                 </p>
@@ -57,18 +57,16 @@
         <div class="vertical-divider hidden-xs"></div>
 
         <div class="col-xs-12 col-sm-8">
-            <div class="container-fluid">
-                <form>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input class="form-control" id="name" type="text" placeholder="Name"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea class="form-control" id="description" rows="8" placeholder="Description"></textarea>
-                    </div>
-                </form>
-            </div>
+            <form>
+                <div class="form-group">
+                    <label for="name">Website Name</label>
+                    <input ng-model="model.website.name" type="text" class="form-control" id="name" placeholder="name">
+                </div>
+                <div class="form-group">
+                    <label for="description">Website Description</label>
+                    <textarea ng-model="model.website.description" class="form-control" id="description" rows="6" placeholder="Description of website"></textarea>
+                </div>
+            </form>
         </div>
     </div>
 
