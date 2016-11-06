@@ -23,10 +23,55 @@ module.exports = function(app){
     app.put('/api/website/:websiteId', updateWebsite);
     app.delete('/api/website/:websiteId', deleteWebsite);
 
-    function createWebsite(req, res){}
-    function findAllWebsitesForUser(req, res){}
-    function findWebsiteById(req, res){}
-    function updateWebsite(req, res){}
-    function deleteWebsite(req, res){}
+    function createWebsite(req, res){
+        var website = req.body;
+        website._id = (new Date()).getTime();
+        websites.push(website);
+        res.send(website);
+    }
 
-}
+    function findAllWebsitesForUser(req, res){
+        var userId = parseInt(req.params.userId);
+        var result = [];
+        for (var w in websites) {
+            if (websites[w].uid === userId) {
+                result.push(websites[w]);
+            }
+        }
+        res.json(result);
+    }
+
+    function findWebsiteById(req, res){
+        var websiteId = parseInt(req.params.websiteId);
+        for (var w in websites) {
+            if (websites[w]._id === websiteId) {
+                res.send(websites[w]);
+                return;
+            }
+        }
+        res.send('0');
+    }
+
+    function updateWebsite(req, res){
+        var website = req.body;
+        var websiteId = parseInt(req.params.websiteId);
+        for (var w in websites) {
+            if (websites[w]._id === websiteId) {
+                websites[w] = website;
+                return;
+            }
+        }
+        res.send('200');
+    }
+
+    function deleteWebsite(req, res){
+        var websiteId = parseInt(req.params.websiteId);
+        for (var i=0; i < websites.length; i++) {
+            if (websites[i]._id == websiteId) {
+                websites.splice(i, 1);
+            }
+        }
+        res.send('200');
+    }
+
+};
