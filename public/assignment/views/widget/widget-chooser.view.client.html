@@ -13,10 +13,10 @@
 
 <div class="container-fluid headerPadding footerPadding">
     <div class="list-group">
-        <div class="list-group-item"><a ng-click="model.createWidget(model.pid, {widgetType: 'HEADER'})">Header</a></div>
-        <div class="list-group-item"><a ng-click="model.createWidget(model.pid, {widgetType: 'HTML'})">HTML</a></div>
-        <div class="list-group-item"><a ng-click="model.createWidget(model.pid, {widgetType: 'IMAGE'})">Image</a></div>
-        <div class="list-group-item"><a ng-click="model.createWidget(model.pid, {widgetType: 'YOUTUBE'})">YouTube</a></div>
+        <div class="list-group-item"><a ng-click="model.createWidget({pid: model.pageId, widgetType: 'HEADER'})">Header</a></div>
+        <div class="list-group-item"><a ng-click="model.createWidget({pid: model.pageId, widgetType: 'HTML'})">HTML</a></div>
+        <div class="list-group-item"><a ng-click="model.createWidget({pid: model.pageId, widgetType: 'IMAGE'})">Image</a></div>
+        <div class="list-group-item"><a ng-click="model.createWidget({pid: model.pageId, widgetType: 'YOUTUBE'})">YouTube</a></div>
     </div>
 </div>
 

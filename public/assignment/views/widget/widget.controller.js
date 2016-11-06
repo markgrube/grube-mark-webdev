@@ -20,9 +20,17 @@
             vm.checkSafeHTML = checkSafeHTML;
             vm.checkSafeYouTubeUrl = checkSafeYouTubeUrl;
             vm.checkSafeImageUrl = checkSafeImageUrl;
+            vm.sortWidget= sortWidget;
 
             function generateWidgets(){
-                vm.widgets = WidgetService.findWidgetsByPageId(pageId)
+                WidgetService
+                    .findWidgetsByPageId(vm.pageId)
+                    .success(function(widgets) {
+                        vm.widgets = widgets;
+                    })
+                    .error(function (){
+                        console.log("No widgets found.")
+                    });
             }
             generateWidgets();
 
@@ -40,6 +48,11 @@
             function checkSafeImageUrl(url){
                 return $sce.trustAsResourceUrl(url);
             }
+
+            function sortWidget(start, end) {
+                WidgetService
+                    .sortWidget(start, end, vm.pageId);
+            }
         }
 
         function WidgetChooserController($routeParams, WidgetService, $location) {
@@ -56,9 +69,15 @@
 
             vm.createWidget = createWidget;
 
-            function createWidget(pid, widget){
-                var newWidget = WidgetService.createWidget(pageId, widget);
-                $location.url("/user/" + userId + "/website/" + webId + "/page/" + pageId + "/widget/" + newWidget._id);
+            function createWidget(widget){
+                WidgetService
+                    .createWidget(vm.pageId, widget)
+                    .success(function(widget) {
+                        $location.url('/user/'+userId+'/website/'+webId+'/page/'+pageId+'/widget/'+widget._id);
+                    })
+                    .error(function (){
+                        console.log("Failed to create widget.")
+                    });
             }
         }
 
@@ -78,17 +97,41 @@
             vm.widgetId = widgetId;
 
             vm.deleteWidget = deleteWidget;
+            vm.updateWidget = updateWidget;
 
             function generateWidget(){
-                vm.widget = WidgetService.findWidgetById(widgetId)
+                WidgetService
+                    .findWidgetById(widgetId)
+                    .success(function(widget) {
+                        vm.widget = widget;
+                    })
+                    .error(function (){
+                        console.log("Widget not found.")
+                    });
             }
             generateWidget();
 
+            function updateWidget() {
+                WidgetService
+                    .updateWidget(widgetId, vm.widget)
+                    .success(function() {
+                        $location.url('/user/'+userId+'/website/'+webId+'/page/'+pageId+'/widget');
+                    })
+                    .error(function (){
+                        console.log("Failed to update widget.")
+                    });
+                $location.url('/user/'+userId+'/website/'+webId+'/page/'+pageId+'/widget');
+            }
+
             function deleteWidget() {
-                WidgetService.deleteWidget(widgetId);
-                $location.url("/user/" + userId + "/website/" + webId + "/page/" + pageId + "/widget");
+                WidgetService.deleteWidget(widgetId)
+                    .success(function() {
+                        $location.url('/user/'+userId+'/website/'+webId+'/page/'+pageId+'/widget');
+                    })
+                    .error(function (){
+                        console.log("Failed to delete widget.")
+                    });
             }
         }
-
     }
 )();

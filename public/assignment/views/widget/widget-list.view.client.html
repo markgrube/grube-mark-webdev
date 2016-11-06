@@ -16,9 +16,9 @@
     </div>
 </nav>
 
-<div class="container-fluid headerPadding footerPadding">
+<div class="container-fluid headerPadding footerPadding widgetItems">
 
-
+    <div jga-sortable jga-sortable-callback="model.sortWidget(start, end)">
         <div ng-switch="widget.widgetType" ng-repeat="widget in model.widgets" class="relative-position">
 
             <div class="absolute-position widget-overlay">
@@ -46,7 +46,7 @@
             <div ng-switch-when="HTML" ng-bind-html="model.checkSafeHTML(widget.text)" class="relative-position">
             </div>
         </div>
-
+    </div>
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
