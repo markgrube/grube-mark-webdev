@@ -9,8 +9,14 @@
 
         function register(user){
             if(vm.password === vm.verifyPassword){
-                var registeredUser = UserService.createUser(user);
-                $location.url("/user/" + registeredUser._id);
+                UserService
+                    .createUser(user)
+                    .success(function(user){
+                        $location.url("/user/"+user._id);
+                    })
+                    .error(function(){
+
+                    });
             }
             else {
                 vm.error = "Passwords do not match";
