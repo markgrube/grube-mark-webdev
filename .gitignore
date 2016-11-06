@@ -1,2 +1,5 @@
 node_modules
 .idea
+.eslintrc.js
+public/assignment/uploads/*
+!public/assignment/uploads/.gitkeep
