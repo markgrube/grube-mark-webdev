@@ -15,7 +15,7 @@
                         $location.url("/user/"+user._id);
                     })
                     .error(function(){
-
+                        console.log("Failed to create user.")
                     });
             }
             else {

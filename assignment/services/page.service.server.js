@@ -51,10 +51,56 @@ module.exports = function(app){
     app.put('/api/page/:pageId', updatePage);
     app.delete('/api/page/:pageId', deletePage);
 
-    function createPage(req, res){}
-    function findAllPagesForWebsite(req, res){}
-    function findPageById(req, res){}
-    function updatePage(req, res){}
-    function deletePage(req, res){}
+    function createPage(req, res){
+        var page = req.body;
+        var websiteId = parseInt(req.params.websiteId);
+        page._id = (new Date()).getTime();
+        page.websiteId = websiteId;
+        pages.push(page);
+        res.send(page);
+    }
+
+    function findAllPagesForWebsite(req, res){
+        var websiteId = parseInt(req.params.websiteId);
+        var result = [];
+        for (var p in pages) {
+            if(pages[p].wid === websiteId) {
+                result.push(pages[p]);
+            }
+        }
+        res.send(result);
+    }
+
+    function findPageById(req, res){
+        var pageId = parseInt(req.params.pageId);
+        for (var p in pages) {
+            if(pages[p]._id === pageId) {
+                res.send(pages[p]);
+                return;
+            }
+        }
+        res.send('0');
+    }
+
+    function updatePage(req, res){
+        var page = req.body;
+        var pageId = parseInt(req.params.pageId);
+        for(var p in pages) {
+            if(pages[p]._id === pageId) {
+                pages[p] = page;
+            }
+        }
+        res.send('200');
+    }
+
+    function deletePage(req, res){
+        var pageId = parseInt(req.params.pageId);
+        for (var i=0; i < pages.length; i++) {
+            if (pages[i]._id == pageId) {
+                pages.splice(i, 1);
+            }
+        }
+        res.send('200');
+    }
 
 }

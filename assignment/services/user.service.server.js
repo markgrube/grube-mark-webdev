@@ -17,9 +17,6 @@ module.exports = function (app) {
     function createUser(req, res) {
         var user = req.body;
         user._id = (new Date()).getTime();
-        // user.first = "";
-        // user.last = "";
-        // user.email = "";
         users.push(user);
         res.send(user);
     }

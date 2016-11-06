@@ -18,7 +18,7 @@
                     }
                 })
                 .error(function (){
-
+                    console.log("No user found.")
                 });
         }
         init();
@@ -30,7 +30,7 @@
                     $location.url("/user/" + user._id)
                 })
                 .error (function (){
-
+                    console.log("Failed to update user.")
                 });
         }
 

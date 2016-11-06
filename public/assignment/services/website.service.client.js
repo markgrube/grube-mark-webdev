@@ -18,8 +18,8 @@
             return $http.post(url, website);
         }
 
-        function findWebsiteById(wid) {
-            var url = '/api/website/'+wid;
+        function findWebsiteById(websiteId) {
+            var url = '/api/website/'+websiteId;
             return $http.get(url);
         }
 

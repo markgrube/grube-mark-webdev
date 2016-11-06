@@ -18,7 +18,7 @@
                         vm.websites = websites;
                     })
                     .error(function (){
-
+                        console.log("No websites found.")
                     });
             }
             generateWebsites();
@@ -39,7 +39,7 @@
                         vm.websites = websites;
                     })
                     .error(function (){
-
+                        console.log("No websites found.")
                     });
             }
             generateWebsites();
@@ -51,7 +51,7 @@
                         $location.url('/user/'+vm.userId+'/website');
                     })
                     .error(function (){
-
+                        console.log("Failed to create Website.")
                     });
                 $location.url('/user/'+userId+'/website');
             }
@@ -76,7 +76,7 @@
                         vm.websites = websites;
                     })
                     .error(function (){
-
+                        console.log("No websites found.")
                     });
             }
             generateWebsites();
@@ -88,7 +88,7 @@
                         vm.website = website;
                     })
                     .error(function (){
-
+                        console.log("No website found.")
                     });
             }
             generateWebsite();
@@ -100,7 +100,7 @@
                         $location.url('/user/'+userId+'/website');
                     })
                     .error(function (){
-
+                        console.log("Failed to update website.")
                     });
                 $location.url('/user/'+userId+'/website');
             }
@@ -112,7 +112,7 @@
                         $location.url('/user/'+userId+'/website');
                     })
                     .error(function (){
-
+                        console.log("Failed to delete website.")
                     });
             }
         }

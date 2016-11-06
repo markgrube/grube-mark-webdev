@@ -38,7 +38,7 @@ module.exports = function(app){
                 result.push(websites[w]);
             }
         }
-        res.json(result);
+        res.send(result);
     }
 
     function findWebsiteById(req, res){

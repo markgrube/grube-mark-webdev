@@ -15,7 +15,14 @@
             vm.webId = webId;
 
             function generatePages(){
-                vm.pages = PageService.findPageByWebsiteId(webId);
+                PageService
+                    .findPageByWebsiteId(vm.webId)
+                    .success(function(pages) {
+                        vm.pages = pages;
+                    })
+                    .error(function(){
+                        console.log("No pages found.");
+                    });
             }
             generatePages();
         }
@@ -36,18 +43,39 @@
             vm.deletePage = deletePage;
 
             function generatePage(){
-                vm.page = PageService.findPageById(pageId);
+                PageService
+                    .findPageById(pageId)
+                    .success(function(page) {
+                        if(page != '0') {
+                            vm.page = page;
+                        }
+                    })
+                    .error(function(){
+                        console.log("Page not found.");
+                    });
             }
             generatePage();
 
             function updatePage(pageId, page) {
-                var newPage = PageService.updatePage(pageId, page);
-                $location.url("/user/" + userId + "/website/" + webId + "/page");
+                PageService
+                    .updatePage(vm.pageId, vm.page)
+                    .success(function() {
+                        $location.url('/user/'+userId+'/website/'+webId+'/page');
+                    })
+                    .error(function(){
+                        console.log("Failed to update page.");
+                    });
             }
 
             function deletePage() {
-                PageService.deletePage(pageId);
-                $location.url("/user/" + userId + "/website/" + webId + "/page");
+                PageService
+                    .deletePage(pageId)
+                    .success(function () {
+                        $location.url('/user/'+userId+'/website/'+webId+'/page');
+                    })
+                    .error(function(){
+                        console.log("Failed to delete page.");
+                    });
             }
         }
 
@@ -62,9 +90,15 @@
 
             vm.createPage = createPage;
 
-            function createPage(webId, page) {
-                var newPage = PageService.createPage(webId, page);
-                $location.url("/user/" + userId + "/website/" + webId + "/page");
+            function createPage(page) {
+                PageService
+                    .createPage(vm.webId, page)
+                    .success(function (page) {
+                        $location.url('/user/' + userId + '/website/' + webId + '/page');
+                    })
+                    .error(function () {
+                        console.log("Failed to create page.");
+                    });
             }
         }
     }
