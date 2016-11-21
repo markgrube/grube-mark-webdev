@@ -94,6 +94,21 @@ module.exports = function () {
                     );
                 break;
 
+            case "TEXT":
+                return WidgetModel
+                .update(
+                    {
+                        _id: widgetId
+                    },
+                    {
+                        text: widget.text,
+                        rows: widget.rows,
+                        placeholder: widget.placeholder,
+                        formatted: widget.formatted
+                    }
+                );
+                break;
+
             default:
                 break;
         }
