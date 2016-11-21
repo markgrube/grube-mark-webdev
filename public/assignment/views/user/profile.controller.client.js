@@ -8,6 +8,7 @@
         var userId = $routeParams.uid;
         vm.uid = userId;
         vm.updateUser = updateUser;
+        vm.deleteUser = deleteUser;
 
         function init() {
             UserService
@@ -34,6 +35,16 @@
                 });
         }
 
+        function deleteUser() {
+            UserService
+                .deleteUser(vm.user._id)
+                .success(function(){
+                    $location.url("/login");
+                })
+                .error(function(){
+
+                });
+        }
 
     }
 })();
