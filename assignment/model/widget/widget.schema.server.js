@@ -1,5 +1,7 @@
 module.exports = function (mongoose) {
 
+    var mongoose = require('mongoose');
+
     return mongoose.Schema({
         _page: {
             type: mongoose.Schema.Types.ObjectId,
@@ -23,6 +25,7 @@ module.exports = function (mongoose) {
         deletable: {type: Boolean, trim: true},
         formatted: {type: Boolean, trim: true}
     }, {
+        collection: "widget",
         timestamps: true
     });
 };

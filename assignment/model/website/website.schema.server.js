@@ -1,6 +1,7 @@
 module.exports = function (mongoose) {
 
-    var pageSchema = require("../page/page.schema.server.js")(mongoose);
+    var mongoose = require('mongoose');
+    var pageSchema = require("../page/page.schema.server")(mongoose);
 
     return mongoose.Schema({
         _user: {
@@ -11,6 +12,7 @@ module.exports = function (mongoose) {
         description: {type: String, trim: true},
         pages: [pageSchema]
     }, {
+        collection: "website",
         timestamps: true
     });
 };

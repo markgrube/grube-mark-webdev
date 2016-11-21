@@ -8,13 +8,13 @@
         function WidgetListController($routeParams, WidgetService, $sce) {
             var vm = this;
 
-            var userId = parseInt($routeParams.uid);
+            var userId = $routeParams.uid;
             vm.userId = userId;
 
-            var webId = parseInt($routeParams.wid);
+            var webId = $routeParams.wid;
             vm.webId = webId;
 
-            var pageId = parseInt($routeParams.pid);
+            var pageId = $routeParams.pid;
             vm.pageId = pageId;
 
             vm.checkSafeHTML = checkSafeHTML;
@@ -58,13 +58,13 @@
         function WidgetChooserController($routeParams, WidgetService, $location) {
             var vm = this;
 
-            var userId = parseInt($routeParams.uid);
+            var userId = $routeParams.uid;
             vm.userId = userId;
 
-            var webId = parseInt($routeParams.wid);
+            var webId = $routeParams.wid;
             vm.webId = webId;
 
-            var pageId = parseInt($routeParams.pid);
+            var pageId = $routeParams.pid;
             vm.pageId = pageId;
 
             vm.createWidget = createWidget;
@@ -84,16 +84,16 @@
         function WidgetEditController($routeParams, WidgetService, $location) {
             var vm = this;
 
-            var userId = parseInt($routeParams.uid);
+            var userId = $routeParams.uid;
             vm.userId = userId;
 
-            var webId = parseInt($routeParams.wid);
+            var webId = $routeParams.wid;
             vm.webId = webId;
 
-            var pageId = parseInt($routeParams.pid);
+            var pageId = $routeParams.pid;
             vm.pageId = pageId;
 
-            var widgetId = parseInt($routeParams.wgid);
+            var widgetId = $routeParams.wgid;
             vm.widgetId = widgetId;
 
             vm.deleteWidget = deleteWidget;

@@ -8,10 +8,10 @@
         function PageListController($routeParams, PageService) {
             var vm = this;
 
-            var userId = parseInt($routeParams.uid);
+            var userId = $routeParams.uid;
             vm.userId = userId;
 
-            var webId = parseInt($routeParams.wid);
+            var webId = $routeParams.wid;
             vm.webId = webId;
 
             function generatePages(){
@@ -30,13 +30,13 @@
         function EditPageController($routeParams, PageService, $location) {
             var vm = this;
 
-            var userId = parseInt($routeParams.uid);
+            var userId = $routeParams.uid;
             vm.userId = userId;
 
-            var webId = parseInt($routeParams.wid);
+            var webId = $routeParams.wid;
             vm.webId = webId;
 
-            var pageId = parseInt($routeParams.pid);
+            var pageId = $routeParams.pid;
             vm.pageId = pageId;
 
             vm.updatePage = updatePage;
@@ -82,10 +82,10 @@
         function NewPageController($routeParams, PageService, $location) {
             var vm = this;
 
-            var userId = parseInt($routeParams.uid);
+            var userId = $routeParams.uid;
             vm.userId = userId;
 
-            var webId = parseInt($routeParams.wid);
+            var webId = $routeParams.wid;
             vm.webId = webId;
 
             vm.createPage = createPage;
