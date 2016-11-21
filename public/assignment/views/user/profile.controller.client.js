@@ -28,7 +28,7 @@
             UserService
                 .updateUser(vm.uid, vm.user)
                 .success(function (user) {
-                    $location.url("/user/" + user._id)
+                    $location.url("/user/" + uid)
                 })
                 .error (function (){
                     console.log("Failed to update user.")
