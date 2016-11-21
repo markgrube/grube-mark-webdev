@@ -23,7 +23,8 @@ module.exports = function (mongoose) {
         class: {type: String, trim: true},
         icon: {type: String, trim: true},
         deletable: {type: Boolean, trim: true},
-        formatted: {type: Boolean, trim: true}
+        formatted: {type: Boolean, trim: true},
+        order: {type: Number, trim: true}
     }, {
         collection: "widget",
         timestamps: true
