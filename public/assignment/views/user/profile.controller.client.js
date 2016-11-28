@@ -9,6 +9,7 @@
         vm.uid = userId;
         vm.updateUser = updateUser;
         vm.deleteUser = deleteUser;
+        vm.logout = logout;
 
         function init() {
             UserService
@@ -42,8 +43,16 @@
                     $location.url("/login");
                 })
                 .error(function(){
-
+                    console.log("Failed to unregister user.")
                 });
+        }
+
+        function logout() {
+            UserService
+                .logout()
+                .success(function () {
+                    $location.url("/login")
+                })
         }
 
     }
